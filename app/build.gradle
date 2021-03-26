@@ -1,0 +1,67 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.omkabel1995.pln"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //butterkhife
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    apply plugin: 'com.jakewharton.butterknife'
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.0.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    implementation 'com.takwolf.android:lock9view:0.0.11'
+    implementation 'com.google.code.gson:gson:2.6.2'
+//    implementation 'com.github.denzcoskun:ImageSlideshow:0.0.7'
+
+
+//    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+//    implementation 'org.apache.httpcomponents:httpclient:4.5'
+    implementation 'org.apache.httpcomponents:httpcore:4.4.1'
+    //noinspection DuplicatePlatformClasses
+//    implementation 'org.apache.httpcomponents:httpclient-android:4.3.5.1'
+//    RMQ
+    implementation 'com.rabbitmq:amqp-client:3.5.6'
+//    implementation 'com.squareup.okhttp:okhttp:2.5.0'
+    implementation 'com.squareup.okhttp:okhttp:2.0.0'
+//    slider
+//
+    implementation 'com.squareup.picasso:picasso:2.5.0'
+    implementation 'com.mikhaellopez:circularimageview:3.2.0'
+
+}

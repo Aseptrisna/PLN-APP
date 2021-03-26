@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PLN</string>
+    <string name="sistem_monitoring_kesehatan_mesin_pembangkit">SISTEM MONITORING KESEHATAN MESIN PEMBANGKIT</string>
+    <string name="pt_pln_persero">PT PLN (Persero)</string>
+    <string name="copyright">\u00A9 PT PLN (Persero)</string>
+    <string name="home">Home</string>
+    <string name="data_master">Data Master</string>
+    <string name="pengaturan">Pengaturan</string>
+    <string name="monitoring">Monitoring</string>
+</resources>

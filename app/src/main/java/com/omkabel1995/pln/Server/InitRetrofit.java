@@ -3,7 +3,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class InitRetrofit {
-    public static final String BASE_URL ="http://192.168.18.26/Api_PLN/";
+    public static final String BASE_URL ="http://172.31.0.79/Api_PLN/";
     private static InitRetrofit mInstance;
     private Retrofit retrofit;
     private InitRetrofit(){

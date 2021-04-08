@@ -1,6 +1,7 @@
 package com.omkabel1995.pln.Server;
 
 
+import com.omkabel1995.pln.Response.Response_Detailasset;
 import com.omkabel1995.pln.Response.Response_Login;
 import com.omkabel1995.pln.Response.Response_Pln;
 
@@ -10,6 +11,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface ApiServices {
     @FormUrlEncoded
@@ -30,29 +32,38 @@ public interface ApiServices {
 
     @GET("getpln.php")
     Call<Response_Pln> getPln();
+    @FormUrlEncoded
+    @POST("getdetailasset.php")
+    Call<Response_Detailasset> Assetgetbyid(
+            @Field("id") String id
+    );
+    @FormUrlEncoded
+    @POST("getdetailasset.php")
+    Call<Response_Detailasset> Assetgetbykode(
+            @Field("kode_asset") String id
+    );
+    @GET("AssetDelete.php/{id}")
+    Call<ResponseBody> deleteasset(
+            @Query("id") String imei
+    );
 //
-//    @FormUrlEncoded
-//    @POST("userlogin.php")
-//    Call<Response_Login> UserLogin(
-//            @Field("email") String email,
-//            @Field("password") String password
-//    );
-//
-//    @FormUrlEncoded
-//    @POST("userregister.php")
-//    Call<ResponseBody> UserDaftar(
-//            @Field("nama") String nama,
-//            @Field("email") String email,
-//            @Field("password") String password
-//    );
-//    @FormUrlEncoded
-//    @POST("userupdate.php")
-//    Call<ResponseBody> UserUpadate(
-//            @Field("id") String id,
-//            @Field("nama") String nama,
-//            @Field("email") String email,
-//            @Field("password") String password
-//    );
+    @FormUrlEncoded
+    @POST("AssetAdd.php")
+    Call<ResponseBody> AssetAdd(
+            @Field("id") String id,
+            @Field("nomor") String nomor,
+            @Field("kode") String kode,
+            @Field("deskripsi") String deskripsi,
+            @Field("tanggal") String tanggal
+    );
+    @FormUrlEncoded
+    @POST("AssetUpdate.php")
+    Call<ResponseBody> AssetUpadate(
+            @Field("id") String id,
+            @Field("nomor") String nomor,
+            @Field("kode") String kode,
+            @Field("deskripsi") String deskripsi
+    );
 //
 //    @FormUrlEncoded
 //    @POST("SimpanJadwal.php")

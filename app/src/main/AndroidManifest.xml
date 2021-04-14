@@ -3,6 +3,7 @@
     package="com.omkabel1995.pln">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,13 +13,14 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.PLN">
-        <activity android:name=".Features.Menu_AddAsset"></activity>
+        <activity android:name=".Features.Menu_Verifikasi"></activity>
+        <activity android:name=".Features.Menu_AddAsset" />
         <activity android:name=".Features.Menu_EditAsset" />
         <activity android:name=".Features.Menu_LaporanAsset" />
         <activity android:name=".Features.Menu_MonitoringAset" />
         <activity android:name=".Features.Menu_DataAsset" />
         <activity android:name=".Features.Menu_StatusAsset" />
-        <activity android:name=".Features.Pengguna.Dashboard_Pengguna" />
+<!--        <activity android:name=".Features.Pengguna.Dashboard_Pengguna" />-->
         <activity android:name=".Features.Pemilik.Dashboard_Pemilik" />
         <activity android:name=".Features.Menu_Signup" />
         <activity android:name=".Features.Menu_Signin" />

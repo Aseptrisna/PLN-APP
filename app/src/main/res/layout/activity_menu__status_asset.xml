@@ -20,17 +20,18 @@
             android:layout_marginRight="10dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="200dp">
+            android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/namaaset"
                 android:gravity="center"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:layout_marginLeft="20sp"
-                android:text="@string/parameter_status_data_kesehatan_pembangkit"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"/>
+                android:layout_marginLeft="2sp"
+                android:text=""
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
             <LinearLayout
                 android:background="@drawable/linear_backgroung"
                 android:layout_marginTop="10dp"
@@ -83,7 +84,7 @@
                     android:layout_height="25sp"/>
                 <TextView
                     android:id="@+id/JumlahStatus"
-                    android:text="625"
+                    android:text=""
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:layout_width="150dp"

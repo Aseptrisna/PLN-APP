@@ -262,5 +262,144 @@ public class Asset {
         });
 
     }
+    public void count (String Id){
+        retrofit2.Call<ResponseBody> call = InitRetrofit.getInstance().getApi().getCount(Id);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()){
+                    try {
+                        JSONObject jsonRESULTS = new JSONObject(response.body().string());
+                        if (jsonRESULTS.getString("status").equals("true")){
+                            Log.d("response api", jsonRESULTS.toString());
+                            String Berhasil=jsonRESULTS.getString("count");
+                            viewAsset.Berhasil(Berhasil);
+                        } else {
+                            try {
+                                Log.d("response api", jsonRESULTS.toString());
+                                String Gagal=jsonRESULTS.getString("message");
+                                Log.v("pesan",Gagal);
+                                viewAsset.Gagal_getdata(Gagal);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    try {
+                        String error_message ="Ada Masalah Internet";
+                        viewAsset.No_Internet(error_message);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Log.v("debug", "onFailure: ERROR > " + t.toString());
+                try {
+                    String error_message ="Server Tidak Merespon";
+                    viewAsset.No_Internet(error_message);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
+            }
+        });
+    }
+    public void getStatus(String status,String id){
+        ApiServices api = InitRetrofit.getInstance().getApi();
+        Call<Response_Detailasset> menuCall = api.Assetgetbystatus(status,id);
+        menuCall.enqueue(new Callback<Response_Detailasset>() {
+            @Override
+            public void onResponse(Call<Response_Detailasset> call, Response<Response_Detailasset> response) {
+                if (response.isSuccessful()){
+                    Log.d("response api", response.body().toString());
+                    List<Model_DetailAsset> dataaset= response.body().getAssetdetail();
+                    boolean status = response.body().isStatus();
+                    if (status){
+                        try {
+                            viewAsset.Berhasil_getdata(dataaset);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                    } else {
+                        try {
+                            String Message="Data Tidak di Temukan";
+                            viewAsset.Gagal_getdata(Message);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<Response_Detailasset> call, Throwable t) {
+                try {
+                    String Message="Tidak Ada Internet";
+                    viewAsset.No_Internet(Message);
+                    t.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+    }
+
+
+    public void Verifikasi(String status, String id, String keterangan) {
+        retrofit2.Call<ResponseBody> call = InitRetrofit.getInstance().getApi().Verifikasi(status,id,keterangan);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()){
+                    try {
+                        JSONObject jsonRESULTS = new JSONObject(response.body().string());
+                        if (jsonRESULTS.getString("status").equals("true")){
+                            Log.d("response api", jsonRESULTS.toString());
+                            String Berhasil=jsonRESULTS.getString("message");
+                            viewAsset.Berhasil(Berhasil);
+                        } else {
+                            try {
+                                Log.d("response api", jsonRESULTS.toString());
+                                String Gagal=jsonRESULTS.getString("message");
+                                Log.v("pesan",Gagal);
+                                viewAsset.Gagal_getdata(Gagal);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    try {
+                        String error_message ="Ada Masalah Internet";
+                        viewAsset.No_Internet(error_message);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Log.v("debug", "onFailure: ERROR > " + t.toString());
+                try {
+                    String error_message ="Server Tidak Merespon";
+                    viewAsset.No_Internet(error_message);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+    }
 }

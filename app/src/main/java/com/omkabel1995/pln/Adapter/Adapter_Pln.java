@@ -46,7 +46,7 @@ public class Adapter_Pln extends RecyclerView.Adapter<Adapter_Pln.MyViewHolder> 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, Menu_StatusAsset.class);
-//                intent.putExtra("ID", Menu.get(position).getId());
+                intent.putExtra("ID", Menu.get(position).getId());
                 intent.putExtra("NAMA", Menu.get(position).getNama());
 //                intent.putExtra("PENGIRIM", Menu.get(position).getPengirim());
 //                intent.putExtra("PENERIMA", Menu.get(position).getPenerima());
@@ -58,7 +58,7 @@ public class Adapter_Pln extends RecyclerView.Adapter<Adapter_Pln.MyViewHolder> 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, Menu_StatusAsset.class);
-//                intent.putExtra("ID", Menu.get(position).getId());
+                intent.putExtra("ID", Menu.get(position).getId());
                 intent.putExtra("NAMA", Menu.get(position).getNama());
 //                intent.putExtra("PENGIRIM", Menu.get(position).getPengirim());
 //                intent.putExtra("PENERIMA", Menu.get(position).getPenerima());
@@ -71,7 +71,7 @@ public class Adapter_Pln extends RecyclerView.Adapter<Adapter_Pln.MyViewHolder> 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, Menu_StatusAsset.class);
-//                intent.putExtra("ID", Menu.get(position).getId());
+                intent.putExtra("ID", Menu.get(position).getId());
                 intent.putExtra("NAMA", Menu.get(position).getNama());
 //                intent.putExtra("PENGIRIM", Menu.get(position).getPengirim());
 //                intent.putExtra("PENERIMA", Menu.get(position).getPenerima());

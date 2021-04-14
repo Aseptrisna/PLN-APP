@@ -10,6 +10,7 @@
         import androidx.annotation.NonNull;
         import androidx.recyclerview.widget.RecyclerView;
 
+        import com.omkabel1995.pln.Features.Menu_LaporanAsset;
         import com.omkabel1995.pln.Features.Menu_MonitoringAset;
         import com.omkabel1995.pln.Model.Model_Pln;
         import com.omkabel1995.pln.R;
@@ -53,7 +54,7 @@
                 holder.namapln.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-                Intent intent = new Intent(context, Menu_MonitoringAset.class);
+                Intent intent = new Intent(context, Menu_LaporanAsset.class);
                 intent.putExtra("ID", Menu.get(position).getId());
                 intent.putExtra("NAMA", Menu.get(position).getNama());
         //                intent.putExtra("PENGIRIM", Menu.get(position).getPengirim());

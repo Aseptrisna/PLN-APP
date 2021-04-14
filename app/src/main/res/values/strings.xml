@@ -15,4 +15,9 @@
     <string name="edit_asset">Edit Asset</string>
     <string name="tambah_data_asset">Tambah Data Asset</string>
     <string name="tambah_data">Tambah Data</string>
+    <string name="status">Status</string>
+    <string name="verifikasi">Verifikasi</string>
+    <string name="webapp_name">PLN</string>
+    <string name="print_complete">Print Complete</string>
+    <string name="print_failed">Print Failed</string>
 </resources>

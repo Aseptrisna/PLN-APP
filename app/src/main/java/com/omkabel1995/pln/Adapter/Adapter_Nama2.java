@@ -54,7 +54,7 @@ public class Adapter_Nama2 extends RecyclerView.Adapter<Adapter_Nama2.MyViewHold
         holder.namapln.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, Menu_LaporanAsset.class);
+                Intent intent = new Intent(context, Menu_MonitoringAset.class);
                 intent.putExtra("ID", Menu.get(position).getId());
                 intent.putExtra("NAMA", Menu.get(position).getNama());
                 //                intent.putExtra("PENGIRIM", Menu.get(position).getPengirim());

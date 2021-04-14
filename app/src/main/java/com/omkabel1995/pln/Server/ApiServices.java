@@ -42,6 +42,12 @@ public interface ApiServices {
     Call<Response_Detailasset> Assetgetbykode(
             @Field("kode_asset") String id
     );
+    @FormUrlEncoded
+    @POST("getstatus.php")
+    Call<Response_Detailasset> Assetgetbystatus(
+            @Field("status") String status,
+            @Field("id") String id
+    );
     @GET("AssetDelete.php/{id}")
     Call<ResponseBody> deleteasset(
             @Query("id") String imei
@@ -74,12 +80,18 @@ public interface ApiServices {
 //            @Field("nama") String nama,
 //            @Field("packeg") String packeg
 //    );
-//    @FormUrlEncoded
-//    @POST("cekJadwal.php")
-//    Call<ResponseBody> RequestJadwal(
-//            @Field("imei") String Imai,
-//            @Field("package") String Package
-//    );
+    @FormUrlEncoded
+    @POST("count.php")
+    Call<ResponseBody> getCount(
+            @Field("id") String Id
+    );
+    @FormUrlEncoded
+    @POST("verifikasi.php")
+    Call<ResponseBody> Verifikasi(
+            @Field("status") String status,
+            @Field("id") String id,
+            @Field("keterangan") String keterangan
+    );
 //    @GET("getsensor.php")
 //    Call<Response_Sensor> getsensor();
 //////    @GET("getJawaban.php")
